@@ -1,0 +1,26 @@
+name: 'Ansible-actions'
+description: 'Runs an Ansible playbook'
+inputs:
+  playbook:
+    description: 'Ansible playbook to run'
+    required: true
+    default: playbook.yml
+ 
+runs:
+   
+   using: composite
+   steps:
+     - name: Install ansible
+       run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo  apt-add-repository ppa:ansible/ansible
+          sudo apt-get update
+          sudo apt-get  -y install ansible
+       shell: bash
+
+     - name: "list all hosts"
+       run: |
+         echo " ansible playbook name - ${{inputs.playbook}}"
+         ansible all --list-hosts
+       shell: bash
