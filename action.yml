@@ -24,7 +24,6 @@ runs:
      - name: "list all hosts"
        run: |
          ansible playbook name - ${{inputs.playbook}}
-         ansible all --list-hosts
        shell: bash
        
     
