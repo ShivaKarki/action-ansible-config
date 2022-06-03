@@ -24,3 +24,6 @@ runs:
          echo " ansible playbook name - ${{inputs.playbook}}"
          ansible all --list-hosts
        shell: bash
+       
+    args:
+    - ${{ inputs.playbook }}   
