@@ -1,0 +1,11 @@
+---
+- name: Simple playbook
+  hosts: localhost
+  become: true
+  tasks:
+      - name: list all hosts
+        shell: "ansible all --list-hosts"
+        register: output_hosts
+        
+      - debug: 
+          var: output_hosts.stdout_lines
