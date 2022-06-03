@@ -9,6 +9,8 @@ inputs:
 runs:
    
    using: composite
+   args:
+    - ${{ inputs.playbook }}   
    steps:
      - name: Install ansible
        run: |
@@ -21,9 +23,8 @@ runs:
 
      - name: "list all hosts"
        run: |
-         echo " ansible playbook name - ${{inputs.playbook}}"
+         ansible playbook name - ${{inputs.playbook}}
          ansible all --list-hosts
        shell: bash
        
-    args:
-    - ${{ inputs.playbook }}   
+    
