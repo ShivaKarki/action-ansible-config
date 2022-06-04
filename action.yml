@@ -8,9 +8,7 @@ inputs:
  
 runs:
    
-   using: composite
-   args:
-    - ${{ inputs.playbook }}   
+   using: composite 
    steps:
      - name: Install ansible
        run: |
