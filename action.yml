@@ -22,6 +22,7 @@ runs:
      - name: "list all hosts"
        run: |
           echo " ${{inputs.playbook}} "
+          echo " I love ansible"
        shell: bash
        
     
