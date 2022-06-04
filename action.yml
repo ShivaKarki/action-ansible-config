@@ -21,7 +21,7 @@ runs:
 
      - name: "list all hosts"
        run: |
-         ansible-playbook ${{inputs.playbook}}
+          echo " ${{inputs.playbook}} "
        shell: bash
        
     
